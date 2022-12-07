@@ -96,9 +96,10 @@ Complex & Complex::operator- = (const Complex & aRval) {
   }
 
 Complex & Complex::operator* = (const Complex & aRval) {
-  double tmpRe = Re; Re = Re * aRval.Re - Im * aRval.Im;
-  Im = Im * aRval.Re + tmpRe * aRval.Im;
-  return *this;
+  double tmpRe = Re;
+  Re = Re*aRval.Re-Im*aRval.Im;
+  Im = Im*aRval.Re+tmpRe*aRval.Im;
+  return* this;
 }
 
 
@@ -109,7 +110,7 @@ Complex & Complex::operator+ = (const double& aRval) {
 
 Complex & Complex::operator- =(const double & aRval) {
   Re- = aRval;
-  return *this;
+  return* this;
 }
 
 Complex & Complex::operator* = (const double & aRval) {
@@ -151,20 +152,20 @@ ostream & operator << (ostream & stream, Complex & a) {
 
 Complex operator+ (const double & aLval, const Complex & aRval) {
   Complex Result;
-  Result.R = aLval + aRval.Re;
-  Result.Im =  aRval.Im;
+  Result.R = aLval+aRval.Re;
+  Result.Im = aRval.Im;
   return Result;
   }
 Complex operator- (const double & aLval, const Complex & aRval) {
   Complex Result;
-  Result.Re = aLval - aRval.Re;
+  Result.Re = aLval-aRval.Re;
   Result.Im = -aRval.Im;
   return Result;
 }
 
 Complex operator* (const double & aLval, const Complex & a) {
   Complex r;
-  r.Re =aLval * a.Re;
-  r.Im =aLval * a.Im;
+  r.Re = aLval*a.Re;
+  r.Im = aLval*a.Im;
   return r;
 }
