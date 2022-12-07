@@ -29,59 +29,62 @@ double Complex::abs()
 {
 return sqrt(Re*Re+Im*Im);
 }
+
 Complex Complex :: operator+ (const Complex & aRval)
 {
   Complex Result;
-  Result.Re=Re+ aRval. Re;
-  Result.Im =Im + aRval.Im ;
+  Result.Re = Re+ aRval.Re;
+  Result.Im = Im + aRval.Im;
   return Result;
 }
 
-  Complex   Complex  ::   operator- ( const Complex & aRval) {
+  Complex Complex :: operator - ( const Complex & aRval) {
   Complex Result;
   Result.Re = Re-aRval.Re;
-  Result.Im=   Im-aRval.Im;
-  return Result;}
+  Result.Im = Im-aRval.Im;
+  return Result;
+  }
 
-Complex Complex ::operator+ (const double & aval)
-{Complex result;
- result.Re= Re +aval;
+Complex Complex ::operator+ (const double & aval){
+  Complex result;
+  result.Re= Re +aval;
   result.Im = Im;
-return result;
+  return result;
 }
 
-Complex Complex:: operator- (const  double& aRval)
-{ Complex Result(*this);
-
-
+Complex Complex:: operator- (const  double & aRval) {
+  Complex Result(*this);
   Result.Re = Re - aRval;
-return Result;
+  return Result;
 }
 
-Complex Complex  ::operator* ( const Complex  & aRval
-){
-Complex Result;Result.Re=Re*aRval.Re-Im*aRval.Im;Result.Im =Re *aRval.Im+Im*aRval.Re;
-return Result;}
+Complex Complex ::operator* ( const Complex  & aRval){
+  Complex Result;
+  Result.Re = Re*aRval.Re-Im*aRval.Im;
+  Result.Im =Re *aRval.Im+Im*aRval.Re;
+  return Result;
+  }
 
-Complex Complex::operator* (const double& aRval)
-{
+Complex Complex::operator* (const double & aRval){
    Complex Result;
-   Result.Re =Re*aRval;
-   Result.Im =Im*aRval;
-     return Result;
+   Result.Re = Re*aRval;
+   Result.Im = Im*aRval;
+   return Result;
 }
-Complex Complex::operator/ (const double& aRval)
-{ Complex Result;
+
+Complex Complex::operator/ (const double& aRval) {
+  Complex Result;
   Result.Re = Re/aRval;
   Result.Im = Im/aRval;
-  return Result; }
+  return Result;
+}
 
-Complex &Complex :: operator+=  ( const   Complex&  arval)
-{
+Complex & Complex :: operator+ = (const Complex & arval){
   Re+= arval.Re;
   Im +=arval.Im;
-return * this;
+  return * this;
 }
+
 Complex & Complex::operator-= (const Complex& aRval)
 { Re-=aRval.Re;
 Im-= aRval.Im; return *this;}
