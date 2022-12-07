@@ -85,30 +85,40 @@ Complex & Complex :: operator+ = (const Complex & arval){
   return * this;
 }
 
-Complex & Complex::operator-= (const Complex& aRval)
-{ Re-=aRval.Re;
-Im-= aRval.Im; return *this;}
+Complex & Complex::operator- = (const Complex & aRval) {
+  Re- = aRval.Re;
+  Im- = aRval.Im; return *this;
+  }
 
-Complex&Complex::operator*=(const Complex&aRval)
-{ double tmpRe = Re; Re = Re * aRval.Re - Im * aRval.Im;
-Im = Im * aRval.Re + tmpRe * aRval.Im; return *this;
+Complex & Complex::operator* = (const Complex & aRval) {
+  double tmpRe = Re; Re = Re * aRval.Re - Im * aRval.Im;
+  Im = Im * aRval.Re + tmpRe * aRval.Im;
+  return *this;
 }
 
 
+Complex & Complex::operator+ = (const double& aRval) {
+  Re+ = aRval;
+  return* this;
+}
 
-Complex& Complex::operator+= (const double& aRval)
-{Re+=aRval;
-return*this;}
-
-Complex&Complex::operator-=(const double&aRval)                                      {
- Re -= aRval;
+Complex & Complex::operator- =(const double & aRval) {
+  Re- = aRval;
   return *this;
+}
 
+Complex & Complex::operator* = (const double & aRval) {
+  Re* = aRval;
+  Im* = aRval;
+  return* this;
+}
 
-}Complex&Complex   ::operator  *=  ( const  double  &  aRval) {  Re *= aRval;  Im *= aRval;   return *this; }
-Complex & Complex :: operator/=(const double&aRval)
-{ Re/=aRval; Im /=aRval;
-             return *this; }
+Complex & Complex::operator/ =(const double & aRval) {
+  Re/ =aRval;
+  Im/ =aRval;
+  return* this;
+  }
+
 Complex& Complex::operator= (const Complex& aRval)
 { Re=aRval.Re; Im=aRval.Im;  return *this; }
 Complex& Complex::operator= (const double& aRval)
